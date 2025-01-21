@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Excelencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Roboto Mono", serif;
+            color: white;
+            background: #0f172a;
+        }
+
+        /* Barra de Navegación */
+        .banner-image {
+            max-width: 150px; /* Ajusta el tamaño del logo */
+            height: auto;
+            cursor: pointer; /* Indica que es clickeable */
+        }
+
+        /* Barra de Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffaf40;
+        }
+
+        /* Icono de menú para dispositivos móviles */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 50px;
+        }
+
+        /* Menú oculto en dispositivos pequeños */
+        .navbar ul.collapsed {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 20px 0;
+            z-index: 999;
+        }
+
+        .navbar ul.collapsed li {
+            margin: 10px 0;
+        }
+
+        .navbar ul.expanded {
+            display: flex;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+            }
+
+            .navbar ul.collapsed {
+                display: flex;
+            }
+        }
+
+
+        /* Logo Superior Izquierdo */
+        .logo-container {
+            position: absolute;
+            top: 10px; /* Ajusta la posición superior para que esté visible */
+            left: 10px; /* Ajusta según el diseño */
+            transform: none; /* Elimina el centrado con translate si ya no es necesario */
+            z-index: 2000; /* Asegúrate de que esté encima de la barra de navegación */
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Video de Fondo */
+        .video-background {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenedor de imágenes que se desplazan */
+        .image-scroll-container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0 15px;
+        }
+
+        .image-scroll-container img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-scroll-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .image-text {
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Sección Consultorías */
+        .consultoria-section {
+            padding: 80px 20px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            text-align: center;
+        }
+
+        .consultoria-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .consultoria-description {
+            font-size: 1.2rem;
+            color: #d3d3d3;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .consultoria-card {
+            background: #374955;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 300px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .consultoria-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .consultoria-link {
+           text-decoration: none; /* Elimina el subrayado */
+            color: inherit; /* Hereda el color del texto */
+            transition: color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+        .consultoria-link:hover {
+            color: #3498db; /* Cambia el color del texto cuando se hace hover */
+        }
+
+        /* Si deseas agregar un subrayado al hacer hover */
+        .consultoria-link:hover h2 {
+            text-decoration: underline;
+        }
+
+        /* Sección ingenieria */
+        .ingenieria-section {
+            padding: 80px 20px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            text-align: center;
+        }
+
+        .ingenieria-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .ingenieria-description {
+            font-size: 1.2rem;
+            color: #d3d3d3;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .ingenieria-card {
+            background: #374955;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 300px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ingenieria-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .ingenieria-link {
+           text-decoration: none; /* Elimina el subrayado */
+            color: inherit; /* Hereda el color del texto */
+            transition: color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+
+        /* Efecto hover */
+        .ingenieria-link:hover {
+            color: #3498db; /* Cambia el color del texto cuando se hace hover */
+        }
+
+        /* Si deseas agregar un subrayado al hacer hover */
+        .ingenieria-link:hover h2 {
+            text-decoration: underline;
+        }
+
+
+        /* Sección Productos */
+        .productos-section {
+            padding: 80px 20px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            text-align: center;
+        }
+
+        .productos-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .productos-description {
+            font-size: 1.2rem;
+            color: #d3d3d3;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .productos-card {
+            background: #374955;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 300px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .productos-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .productos-link {
+           text-decoration: none; /* Elimina el subrayado */
+            color: inherit; /* Hereda el color del texto */
+            transition: color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+
+        /* Efecto hover */
+        .productos-link:hover {
+            color: #3498db; /* Cambia el color del texto cuando se hace hover */
+        }
+
+        /* Si deseas agregar un subrayado al hacer hover */
+        .productos-link:hover h2 {
+            text-decoration: underline;
+        }
+
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            opacity: 0; /* Comienza invisible */
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            padding: 40px 20px;
+            font-family: 'Roboto Mono', serif;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffaf40;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-address {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #d3d3d3;
+            margin-bottom: 20px;
+        }
+
+        .footer-address a {
+            color: #ffaf40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-address a:hover {
+            color: #ffe29d;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #a9a9a9;
+            margin-top: 20px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .text-overlay {
+                font-size: 1.5rem;  /* Reducir el tamaño del texto en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-overlay {
+                font-size: 1.2rem;  /* Aún más pequeño en pantallas muy pequeñas */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="Logo Metalfix Transparente.png" alt="logo metalfix" class="banner-image">
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbarMenu">
+            <li><a href="index.html#consultorias">Consultorías</a></li>
+            <li><a href="index.html#ingenieria">Ingeniería</a></li>
+            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
+        </ul>
+    </nav>
+
+    <!-- Video de Fondo -->
+    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="2406491-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="image-scroll-container" id="imageScrollContainer">
+            <div class="image-container">
+                <img src="image1.jpg" alt="Imagen 1">
+                <div class="image-text">1949</div>
+            </div>
+            <div class="image-container">
+                <img src="image2.jpg" alt="Imagen 2">
+                <div class="image-text">1959</div>
+            </div>
+            <div class="image-container">
+                <img src="image3.jpg" alt="Imagen 3">
+                <div class="image-text">1969</div>
+            </div>
+            <div class="image-container">
+                <img src="image4.jpg" alt="Imagen 4">
+                <div class="image-text">1979</div>
+            </div>
+            <div class="image-container">
+                <img src="image5.jpg" alt="Imagen 5">
+                <div class="image-text">1989</div>
+            </div>
+            <div class="image-container">
+                <img src="image6.jpg" alt="Imagen 6">
+                <div class="image-text">1999</div>
+            </div>
+            <div class="image-container">
+                <img src="image7.jpg" alt="Imagen 7">
+                <div class="image-text">2009</div>
+            </div>
+            <div class="image-container">
+                <img src="image8.jpg" alt="Imagen 8">
+                <div class="image-text">2019</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consultorías -->
+    <section id="consultorias" class="consultoria-section">
+        <a href="consultoria.html" class="consultoria-link">
+            <h2 class="consultoria-title">Consultorías</h2>
+        </a>
+        <p class="consultoria-description">Traspasamos experiencia.</p>
+        <div class="consultoria-card">
+            <h3>Optimización de Procesos</h3>
+            <p>Mejoramos tu eficiencia operativa.</p>
+        </div>
+    </section>
+    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="855137-hd_1280_720_24fps.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="text-overlay" id="textOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
+            Texto Animado
+        </div>
+    </div>    
+    <!--  -->
+    <section id="ingenieria" class="ingenieria-section">
+        <a href="ingenieria.html" class="ingenieria-link">
+            <h2 class="ingenieria-title">Ingeniería</h2>
+        </a>
+        <p class="ingenieria-description">Traspasamos experiencia.</p>
+        <div class="ingenieria-card">
+            <h3>Ingeniería</h3>
+            <p>Texto</p>
+        </div>
+    </section>
+    
+    
+    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="855491-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="text-overlay" id="textOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
+            prueba 2
+        </div>
+    </div> 
+    <!--  -->
+    <section id="productosyservicios" class="productos-section">
+        <a href="productos.html" class="productos-link">
+            <h2 class="productos-title">Productos y Servicios</h2>
+        </a>
+        <p class="productos-description">Traspasamos experiencia.</p>
+        <div class="productos-card">
+            <h3>Nuestros Productos y Servicios</h3>
+            <p>Ofrecemos una gran cantidad de productos.</p>
+        </div>
+    </section>
+    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="2386581-uhd_4096_2160_24fps.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="text-overlay" id="textOverlay" 
+             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                    color: white; font-size: 2rem; z-index: 1; text-align: center;">
+            <h3>Nosotros</h3>
+            <p>Ofrecemos una gran cantidad de productos.</p>
+        </div>    
+    </div>
+    <div>
+        <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div> 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-title">Nuestra Dirección</p>
+                <p class="footer-address">
+                    Luis Beltrán 1588<br>
+                    Providencia, Region Metropolitana, Chile<br>
+                    Teléfono: +56 9 4222 9903<br>
+                    Email: <a href="mailto:fix@fix.cl">fix@fix.cl</a>
+                </p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Traspasamos experiencia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- JavaScript para el auto-scroll de imágenes -->
+    <script>
+        // Seleccionar el contenedor de imágenes
+        const imageContainer = document.getElementById('imageScrollContainer');
+        let containerWidth = imageContainer.offsetWidth;
+        const imageWidth = 250; // Ancho de cada imagen
+        let position = containerWidth; // Empezamos con la posición fuera de la pantalla
+
+        let speed = 0.5; // Velocidad predeterminada de desplazamiento (rápido)
+
+        // Función para verificar si una imagen está completamente visible
+        function isImageVisible() {
+            const containerRect = imageContainer.getBoundingClientRect();
+            return containerRect.left >= 0 && containerRect.right <= window.innerWidth;
+        }
+
+        // Función para mover las imágenes
+        function moveImages() {
+            // Ajustamos la velocidad en función de si el contenedor está completamente visible
+
+            position -= speed; // Desplazar las imágenes por la velocidad calculada
+
+            if (position <= -containerWidth) {
+                // Si el contenedor se ha movido completamente fuera de la pantalla, reiniciamos
+                position = containerWidth;
+            }
+
+            imageContainer.style.transform = `translateX(${position}px)`; // Aplicamos el movimiento
+            requestAnimationFrame(moveImages); // Llamar a la función en el siguiente cuadro
+        }
+
+        // Iniciar el movimiento al cargar la página
+        window.onload = moveImages;
+        const menuToggle = document.getElementById('menuToggle');
+        const navbarMenu = document.getElementById('navbarMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('collapsed');
+            navbarMenu.classList.toggle('expanded');
+        });
+    </script>
+</body>
+</html>

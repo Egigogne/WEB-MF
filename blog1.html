@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Innovación y Excelencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Roboto Mono", serif;
+            color: white;
+            background: #0f172a;
+        }
+
+        /* Barra de Navegación */
+        .banner-image {
+            max-width: 150px; /* Ajusta el tamaño del logo */
+            height: auto;
+            cursor: pointer; /* Indica que es clickeable */
+        }
+
+        /* Barra de Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffaf40;
+        }
+
+        /* Icono de menú para dispositivos móviles */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 50px;
+        }
+
+        /* Menú oculto en dispositivos pequeños */
+        .navbar ul.collapsed {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 20px 0;
+            z-index: 999;
+        }
+
+        .navbar ul.collapsed li {
+            margin: 10px 0;
+        }
+
+        .navbar ul.expanded {
+            display: flex;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+            }
+
+            .navbar ul.collapsed {
+                display: flex;
+            }
+        }
+        /* Logo Superior Izquierdo */
+        .logo-container {
+            position: absolute;
+            top: 10px; /* Ajusta la posición superior para que esté visible */
+            left: 10px; /* Ajusta según el diseño */
+            transform: none; /* Elimina el centrado con translate si ya no es necesario */
+            z-index: 2000; /* Asegúrate de que esté encima de la barra de navegación */
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        .blog-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .blog-post {
+            background: #374955;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-post h2 {
+            color: #ffaf40;
+            margin-bottom: 10px;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            color: #d3d3d3;
+        }
+        footer {
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            padding: 40px 20px;
+            font-family: 'Roboto Mono', serif;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffaf40;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-address {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #d3d3d3;
+            margin-bottom: 20px;
+        }
+
+        .footer-address a {
+            color: #ffaf40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-address a:hover {
+            color: #ffe29d;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #a9a9a9;
+            margin-top: 20px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .text-overlay {
+                font-size: 1.5rem;  /* Reducir el tamaño del texto en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-overlay {
+                font-size: 1.2rem;  /* Aún más pequeño en pantallas muy pequeñas */
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="Logo Metalfix Transparente.png" alt="logo metalfix" class="banner-image">
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbarMenu">
+            <li><a href="index.html#consultorias">Consultorías</a></li>
+            <li><a href="index.html#ingenieria">Ingeniería</a></li>
+            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
+        </ul>
+    </nav>
+
+    <section class="blog-section">
+        <h1 class="blog-title">Nuestro Blog</h1>
+        <div class="blog-post">
+            <h2>Innovación en la Industria</h2>
+            <p>Descubre las últimas tendencias en tecnología para la industria moderna.</p>
+        </div>
+        <div class="blog-post">
+            <h2>Estrategias de Consultoría</h2>
+            <p>Consejos para optimizar procesos empresariales y mejorar la eficiencia.</p>
+        </div>
+        <div class="blog-post">
+            <h2>Productos y Servicios</h2>
+            <p>Explora nuestra gama de productos innovadores que están revolucionando el mercado.</p>
+        </div>
+    </section>
+    <div>
+        <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-title">Nuestra Dirección</p>
+                <p class="footer-address">
+                    Luis Beltrán 1588<br>
+                    Providencia, Region Metropolitana, Chile<br>
+                    Teléfono: +56 9 4222 9903<br>
+                    Email: <a href="mailto:metalfix@metalfix.cl">metalfix@metalfix.cl</a>
+                </p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Traspasamos experiencia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
