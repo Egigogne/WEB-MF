@@ -13,7 +13,7 @@
             margin: 0;
             font-family: "Roboto Mono", serif;
             color: white;
-            background: #0f172a;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);;
         }
 
         /* Barra de Navegación */
@@ -183,162 +183,155 @@
         }
 
         /* Sección Consultorías */
-        .consultoria-section {
-            padding: 80px 20px;
-            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+        .menus-container {
+            text-align: center; /* Centrar contenido */
+            padding: 50px 20px;
+        }
+
+        .menus-title {
+            font-size: 2.5em; /* Tamaño más grande */
+            font-weight: bold;
+            color: #c1c1c1;
+            margin-bottom: 50px; /* Espaciado para bajar las secciones */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .consultorias-wrapper {
+            display: flex; /* Alinear los elementos en una fila */
+            justify-content: center; /* Centrarlos horizontalmente */
+            align-items: flex-start; /* Asegurar alineación desde arriba */
+            gap: 50px; /* Espaciado entre los cuadros */
+            flex-wrap: wrap; /* Adaptar en pantallas pequeñas */
+        }
+
+        .consultoria {
+            background: #2f2f2f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .consultoria img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
         }
 
         .consultoria-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #555;
         }
 
         .consultoria-description {
-            font-size: 1.2rem;
-            color: #d3d3d3;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .consultoria:hover {
+            transform: translateY(-5px);
+        }
+
+        .consultoria-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .consultoria-title {
+            font-size: 1.8em;
+            color: #e7f2fe;
+            margin-bottom: 10px;
+        }
+
+        .consultoria-description {
+            font-size: 1.2em;
+            color: #666;
         }
 
         .consultoria-card {
-            background: #374955;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 300px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #19377d;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .consultoria-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
-        .consultoria-link {
-           text-decoration: none; /* Elimina el subrayado */
-            color: inherit; /* Hereda el color del texto */
-            transition: color 0.3s ease; /* Transición suave para el cambio de color */
-        }
-        .consultoria-link:hover {
-            color: #3498db; /* Cambia el color del texto cuando se hace hover */
+        .consultoria-card h3 {
+            font-size: 1.5em;
+            color: #474646;
         }
 
-        /* Si deseas agregar un subrayado al hacer hover */
-        .consultoria-link:hover h2 {
-            text-decoration: underline;
+        .consultoria-card p {
+            font-size: 1em;
+            color: #504f4f;
         }
-
-        /* Sección ingenieria */
-        .ingenieria-section {
-            padding: 80px 20px;
-            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+        /* Contenedor principal del carrusel */
+        .menus-container {
             text-align: center;
+            padding: 50px 20px;
         }
 
-        .ingenieria-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        .consultorias-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
         }
 
-        .ingenieria-description {
-            font-size: 1.2rem;
-            color: #d3d3d3;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .ingenieria-card {
-            background: #374955;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 300px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .ingenieria-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
-        .ingenieria-link {
-           text-decoration: none; /* Elimina el subrayado */
-            color: inherit; /* Hereda el color del texto */
-            transition: color 0.3s ease; /* Transición suave para el cambio de color */
-        }
-
-        /* Efecto hover */
-        .ingenieria-link:hover {
-            color: #3498db; /* Cambia el color del texto cuando se hace hover */
-        }
-
-        /* Si deseas agregar un subrayado al hacer hover */
-        .ingenieria-link:hover h2 {
-            text-decoration: underline;
-        }
-
-
-        /* Sección Productos */
-        .productos-section {
-            padding: 80px 20px;
-            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+        .consultoria {
             text-align: center;
+            max-width: 400px;
+            position: relative;
         }
 
-        .productos-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            height: 300px;
+            position: relative;
+
         }
 
-        .productos-description {
-            font-size: 1.2rem;
-            color: #d3d3d3;
-            max-width: 700px;
-            margin: 0 auto;
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .productos-card {
-            background: #374955;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 300px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .carousel-track img {
+            width: fit-content;
+            height: fit-content;
+            object-fit: cover;
+            margin-top: -80px; /* Ajusta el valor según necesites */
         }
 
-        .productos-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
-        .productos-link {
-           text-decoration: none; /* Elimina el subrayado */
-            color: inherit; /* Hereda el color del texto */
-            transition: color 0.3s ease; /* Transición suave para el cambio de color */
-        }
-
-        /* Efecto hover */
-        .productos-link:hover {
-            color: #3498db; /* Cambia el color del texto cuando se hace hover */
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 18px;
+            z-index: 10;
         }
 
-        /* Si deseas agregar un subrayado al hacer hover */
-        .productos-link:hover h2 {
-            text-decoration: underline;
+        .prevBtn {
+            left: 10px;
         }
+
+        .nextBtn {
+            right: 10px;
+        }
+
+
+        /* Efecto al pasar el mouse sobre los botones */
+
 
 
         .video-wrapper {
@@ -447,6 +440,7 @@
             z-index: 1000;
         }
 
+
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
@@ -477,9 +471,9 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul id="navbarMenu">
-            <li><a href="index.html#consultorias">Consultorías</a></li>
-            <li><a href="index.html#ingenieria">Ingeniería</a></li>
-            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
+            <li><a href="consultoria.html">Consultorías</a></li>
+            <li><a href="ingenieria.html">Ingeniería</a></li>
+            <li><a href="productos.html">Productos y Servicios</a></li>
         </ul>
     </nav>
 
@@ -526,14 +520,26 @@
     </div>
 
     <!-- Consultorías -->
-    <section id="consultorias" class="consultoria-section">
-        <a href="consultoria.html" class="consultoria-link">
-            <h2 class="consultoria-title">Consultorías</h2>
-        </a>
-        <p class="consultoria-description">Traspasamos experiencia.</p>
-        <div class="consultoria-card">
-            <h3>Optimización de Procesos</h3>
-            <p>Mejoramos tu eficiencia operativa.</p>
+    <section id="menus" class="menus-container">
+        <div class="consultorias-wrapper">
+            <div class="consultoria">
+                <a href="consultoria.html" class="consultoria-link">
+                    <h2 class="consultoria-title">Consultorías</h2>
+                </a>
+                <p class="consultoria-description">Traspasamos experiencia.</p>
+            </div>
+            <div class="consultoria">
+                <a href="ingenieria.html" class="consultoria-link">
+                    <h2 class="consultoria-title">Ingeniería</h2>
+                </a>
+                <p class="consultoria-description">Traspasamos experiencia.</p>
+            </div>
+            <div class="consultoria">
+                <a href="productos.html" class="consultoria-link">
+                    <h2 class="consultoria-title">Productos</h2>
+                </a>
+                <p class="consultoria-description">Traspasamos experiencia.</p>
+            </div>
         </div>
     </section>
     <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
@@ -546,17 +552,21 @@
         </div>
     </div>    
     <!--  -->
-    <section id="ingenieria" class="ingenieria-section">
-        <a href="ingenieria.html" class="ingenieria-link">
-            <h2 class="ingenieria-title">Ingeniería</h2>
-        </a>
-        <p class="ingenieria-description">Traspasamos experiencia.</p>
-        <div class="ingenieria-card">
-            <h3>Ingeniería</h3>
-            <p>Texto</p>
+    <section id="menus" class="menus-container">
+        <h2 class="menus-title">Desde 1949 aportando a la industria</h2>
+        <div class="consultorias-wrapper">
+            <div class="consultoria">
+                <img src="image9.jpg" alt="Imagen 09">
+                <p class="consultoria-description">Desde 1949, Metalfix ha sido aliado estratégico para industrias que buscan soluciones innovadoras en manufactura e ingeniería.</p>
+                <p class="consultoria-description">Nos especializamos en el desarrollo de prototipos, diseño de piezas mecánicas, maquinaria hidráulica, aire comprimido y más</p>
+            </div>
+            <div class="consultoria">
+                <img src="image10.jpg" alt="Imagen 10">
+                <p class="consultoria-description">Ofrecemos servicios personalizados, adaptado a las necesidades de cada cliente.</p>
+                <p class="consultoria-description">Nuestro compromiso es transformar tus ideas en proyectos exitosos, con una trayectoria que respalda nuestra calidad y excelencia.</p>
+            </div>
         </div>
     </section>
-    
     
     <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
         <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
@@ -568,16 +578,44 @@
         </div>
     </div> 
     <!--  -->
-    <section id="productosyservicios" class="productos-section">
-        <a href="productos.html" class="productos-link">
-            <h2 class="productos-title">Productos y Servicios</h2>
-        </a>
-        <p class="productos-description">Traspasamos experiencia.</p>
-        <div class="productos-card">
-            <h3>Nuestros Productos y Servicios</h3>
-            <p>Ofrecemos una gran cantidad de productos.</p>
+    <section id="menus" class="menus-container">
+        <h2 class="menus-title">Desde 1949 aportando a la industria</h2>
+        <div class="consultorias-wrapper">
+            
+            <!-- Carrusel Equipos -->
+            <div class="consultoria">
+                <h2 class="consultoria-title">Equipos</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="equipos-carousel">
+                        <img src="consultorias9.png" alt="Imagen 1">
+                        <img src="consultorias10.png" alt="Imagen 2">
+                        <img src="consultorias11.png" alt="Imagen 3">
+                        <img src="consultorias12.png" alt="Imagen 4">
+                    </div>
+                    <button class="prevBtn" data-target="equipos-carousel">◀</button>
+                    <button class="nextBtn" data-target="equipos-carousel">▶</button>
+                </div>
+            </div>
+    
+            <!-- Carrusel Materiales -->
+            <div class="consultoria">
+                <h2 class="consultoria-title">Materiales</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="materiales-carousel">
+                        <img src="materiales1.png" alt="Imagen 1">
+                        <img src="materiales2.png" alt="Imagen 2">
+                        <img src="materiales3.png" alt="Imagen 3">
+                        <img src="materiales4.png" alt="Imagen 4">
+                    </div>
+                    <button class="prevBtn" data-target="materiales-carousel">◀</button>
+                    <button class="nextBtn" data-target="materiales-carousel">▶</button>
+                </div>
+            </div>
+            
         </div>
     </section>
+    
+    
     <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
         <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
             <source src="2386581-uhd_4096_2160_24fps.mp4" type="video/mp4">
@@ -590,7 +628,6 @@
             <p>Ofrecemos una gran cantidad de productos.</p>
         </div>    
     </div>
-    <div>
         <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
             <i class="fab fa-whatsapp"></i>
         </a>
@@ -654,6 +691,51 @@
             navbarMenu.classList.toggle('collapsed');
             navbarMenu.classList.toggle('expanded');
         });
+        // Selección de elementos
+        const track = document.querySelector('.carousel-track');
+        const images = document.querySelectorAll('.carousel-track img');
+        let index = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousels = document.querySelectorAll(".carousel-container");
+
+            carousels.forEach((carousel, index) => {
+                let track = carousel.querySelector(".carousel-track");
+                let images = track.children;
+                let indexImage = 0;
+
+                function moveToNextImage() {
+                    if (indexImage >= images.length - 1) {
+                        indexImage = 0;
+                    } else {
+                        indexImage++;
+                    }
+                    updateCarousel();
+                }
+
+                function moveToPrevImage() {
+                    if (indexImage <= 0) {
+                        indexImage = images.length - 1;
+                    } else {
+                        indexImage--;
+                    }
+                    updateCarousel();
+                }
+
+                function updateCarousel() {
+                    let offset = -indexImage * 100;
+                    track.style.transform = `translateX(${offset}%)`;
+                }
+
+                carousel.parentElement.querySelector(".nextBtn").addEventListener("click", moveToNextImage);
+                carousel.parentElement.querySelector(".prevBtn").addEventListener("click", moveToPrevImage);
+
+                // Carrusel automático
+                setInterval(moveToNextImage, 3000);
+            });
+        });
+
+
     </script>
 </body>
 </html>
