@@ -22,7 +22,6 @@
             height: auto;
             cursor: pointer; /* Indica que es clickeable */
         }
-
         /* Barra de Navegación */
         .navbar {
             position: fixed;
@@ -108,7 +107,6 @@
             }
         }
 
-
         /* Logo Superior Izquierdo */
         .logo-container {
             position: absolute;
@@ -143,43 +141,51 @@
             height: 100%;
             object-fit: cover;
         }
-
-        /* Contenedor de imágenes que se desplazan */
-        .image-scroll-container {
+        .bg-video {
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
             width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            opacity: 1;
-            z-index: 10;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
-
+        @media (max-width: 768px) {
+            .video-background {
+                height: 50vh; /* Ajustar la altura según sea necesario */
+            }
+        }
+        /* Contenedor de imágenes que se desplazan */
+        .image-scroll-container {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            width: 100%;
+            position: absolute;
+            bottom: 5%; /* Ajusta la posición vertical */
+            left: 0;
+            padding: 20px 0;
+        }
+        
         .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            flex: 0 0 auto;
+            width: 250px; /* Ajusta el tamaño de las imágenes */
             margin: 0 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .image-scroll-container img {
-            width: 150px;
+        .image-container img {
+            width: 100%;
             height: auto;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        .image-scroll-container img:hover {
+        .image-container:hover {
             transform: scale(1.1);
-        }
-
-        .image-text {
-            font-size: 14px;
-            color: rgb(0, 0, 0);
         }
 
         /* Sección Consultorías */
@@ -206,7 +212,7 @@
         }
 
         .consultoria {
-            background: #2f2f2f;
+            background: #0f2027;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -260,7 +266,7 @@
 
         .consultoria-card h3 {
             font-size: 1.5em;
-            color: #474646;
+            color: #0f2027;
         }
 
         .consultoria-card p {
@@ -287,47 +293,39 @@
         }
 
         .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            height: 300px;
             position: relative;
-
+            width: 100%;
+            max-width: 600px; /* O el tamaño que necesites */
+            overflow: hidden;
         }
 
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
 
         .carousel-track img {
-            width: fit-content;
-            height: fit-content;
-            object-fit: cover;
-            margin-top: -80px; /* Ajusta el valor según necesites */
+            width: 100%;
+            height: auto;
+            flex: 0 0 100%;
         }
 
-        button {
+        .prevBtn, .nextBtn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.5);
-            color: #fff;
+            color: white;
             border: none;
             cursor: pointer;
-            padding: 10px 15px;
-            font-size: 18px;
-            z-index: 10;
+            padding: 10px 20px;
+            font-size: 1.5rem;
         }
 
-        .prevBtn {
-            left: 10px;
-        }
+        .prevBtn { left: 10px; }
+        .nextBtn { right: 10px; }
 
-        .nextBtn {
-            right: 10px;
-        }
 
 
         /* Efecto al pasar el mouse sobre los botones */
@@ -471,9 +469,9 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul id="navbarMenu">
-            <li><a href="consultoria.html">Consultorías</a></li>
-            <li><a href="ingenieria.html">Ingeniería</a></li>
-            <li><a href="productos.html">Productos y Servicios</a></li>
+            <li><a href="index.html#consultorias">Consultorías</a></li>
+            <li><a href="index.html#ingenieria">Ingeniería</a></li>
+            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
         </ul>
     </nav>
 
@@ -485,36 +483,28 @@
         </video>
         <div class="image-scroll-container" id="imageScrollContainer">
             <div class="image-container">
-                <img src="image1.jpg" alt="Imagen 1">
-                <div class="image-text">1949</div>
+                <img src="imagen1.png" alt="Imagen 1">
             </div>
             <div class="image-container">
-                <img src="image2.jpg" alt="Imagen 2">
-                <div class="image-text">1959</div>
+                <img src="imagen2.png" alt="Imagen 2">
             </div>
             <div class="image-container">
-                <img src="image3.jpg" alt="Imagen 3">
-                <div class="image-text">1969</div>
+                <img src="imagen3.png" alt="Imagen 3">
             </div>
             <div class="image-container">
-                <img src="image4.jpg" alt="Imagen 4">
-                <div class="image-text">1979</div>
+                <img src="imagen4.png" alt="Imagen 4">
             </div>
             <div class="image-container">
-                <img src="image5.jpg" alt="Imagen 5">
-                <div class="image-text">1989</div>
+                <img src="imagen5.png" alt="Imagen 5">
             </div>
             <div class="image-container">
-                <img src="image6.jpg" alt="Imagen 6">
-                <div class="image-text">1999</div>
+                <img src="imagen6.png" alt="Imagen 6">
             </div>
             <div class="image-container">
-                <img src="image7.jpg" alt="Imagen 7">
-                <div class="image-text">2009</div>
+                <img src="imagen7.png" alt="Imagen 7">
             </div>
             <div class="image-container">
-                <img src="image8.jpg" alt="Imagen 8">
-                <div class="image-text">2019</div>
+                <img src="imagen8.png" alt="Imagen 8">
             </div>
         </div>
     </div>
@@ -550,18 +540,19 @@
         <div class="text-overlay" id="textOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
             Texto Animado
         </div>
-    </div>    
+    </div>
+
     <!--  -->
     <section id="menus" class="menus-container">
         <h2 class="menus-title">Desde 1949 aportando a la industria</h2>
         <div class="consultorias-wrapper">
             <div class="consultoria">
-                <img src="image9.jpg" alt="Imagen 09">
+                <img src="Imagen9.png" alt="Imagen 09">
                 <p class="consultoria-description">Desde 1949, Metalfix ha sido aliado estratégico para industrias que buscan soluciones innovadoras en manufactura e ingeniería.</p>
                 <p class="consultoria-description">Nos especializamos en el desarrollo de prototipos, diseño de piezas mecánicas, maquinaria hidráulica, aire comprimido y más</p>
             </div>
             <div class="consultoria">
-                <img src="image10.jpg" alt="Imagen 10">
+                <img src="Imagen10.png" alt="Imagen 10">
                 <p class="consultoria-description">Ofrecemos servicios personalizados, adaptado a las necesidades de cada cliente.</p>
                 <p class="consultoria-description">Nuestro compromiso es transformar tus ideas en proyectos exitosos, con una trayectoria que respalda nuestra calidad y excelencia.</p>
             </div>
@@ -570,18 +561,14 @@
     
     <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
         <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-            <source src="855491-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <source src="banner_en_video.mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
-        <div class="text-overlay" id="textOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
-            prueba 2
-        </div>
     </div> 
     <!--  -->
     <section id="menus" class="menus-container">
         <h2 class="menus-title">Desde 1949 aportando a la industria</h2>
         <div class="consultorias-wrapper">
-            
             <!-- Carrusel Equipos -->
             <div class="consultoria">
                 <h2 class="consultoria-title">Equipos</h2>
@@ -592,8 +579,8 @@
                         <img src="consultorias11.png" alt="Imagen 3">
                         <img src="consultorias12.png" alt="Imagen 4">
                     </div>
-                    <button class="prevBtn" data-target="equipos-carousel">◀</button>
-                    <button class="nextBtn" data-target="equipos-carousel">▶</button>
+                    <button class="prevBtn">◀</button>
+                    <button class="nextBtn">▶</button>
                 </div>
             </div>
     
@@ -606,14 +593,18 @@
                         <img src="materiales2.png" alt="Imagen 2">
                         <img src="materiales3.png" alt="Imagen 3">
                         <img src="materiales4.png" alt="Imagen 4">
+                        <img src="materiales5.png" alt="Imagen 5">
+                        <img src="materiales6.png" alt="Imagen 6">
+                        <img src="materiales7.png" alt="Imagen 7">
+                        <img src="materiales8.png" alt="Imagen 8">
                     </div>
-                    <button class="prevBtn" data-target="materiales-carousel">◀</button>
-                    <button class="nextBtn" data-target="materiales-carousel">▶</button>
+                    <button class="prevBtn">◀</button>
+                    <button class="nextBtn">▶</button>
                 </div>
             </div>
-            
         </div>
     </section>
+    
     
     
     <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
@@ -653,37 +644,6 @@
 
     <!-- JavaScript para el auto-scroll de imágenes -->
     <script>
-        // Seleccionar el contenedor de imágenes
-        const imageContainer = document.getElementById('imageScrollContainer');
-        let containerWidth = imageContainer.offsetWidth;
-        const imageWidth = 250; // Ancho de cada imagen
-        let position = containerWidth; // Empezamos con la posición fuera de la pantalla
-
-        let speed = 0.5; // Velocidad predeterminada de desplazamiento (rápido)
-
-        // Función para verificar si una imagen está completamente visible
-        function isImageVisible() {
-            const containerRect = imageContainer.getBoundingClientRect();
-            return containerRect.left >= 0 && containerRect.right <= window.innerWidth;
-        }
-
-        // Función para mover las imágenes
-        function moveImages() {
-            // Ajustamos la velocidad en función de si el contenedor está completamente visible
-
-            position -= speed; // Desplazar las imágenes por la velocidad calculada
-
-            if (position <= -containerWidth) {
-                // Si el contenedor se ha movido completamente fuera de la pantalla, reiniciamos
-                position = containerWidth;
-            }
-
-            imageContainer.style.transform = `translateX(${position}px)`; // Aplicamos el movimiento
-            requestAnimationFrame(moveImages); // Llamar a la función en el siguiente cuadro
-        }
-
-        // Iniciar el movimiento al cargar la página
-        window.onload = moveImages;
         const menuToggle = document.getElementById('menuToggle');
         const navbarMenu = document.getElementById('navbarMenu');
 
@@ -691,49 +651,74 @@
             navbarMenu.classList.toggle('collapsed');
             navbarMenu.classList.toggle('expanded');
         });
-        // Selección de elementos
-        const track = document.querySelector('.carousel-track');
-        const images = document.querySelectorAll('.carousel-track img');
-        let index = 0;
+        document.addEventListener('click', (e) => {
+            if (!navbarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbarMenu.classList.remove('active');
+            }
+        });
+
+
 
         document.addEventListener("DOMContentLoaded", function () {
+            // Desplazamiento automático de imágenes
+            const scrollContainer = document.getElementById("imageScrollContainer");
+            const scrollSpeed = 50;
+            const step = 1;
+
+            function startScrolling() {
+                scrollContainer.scrollLeft += step;
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }
+
+            let scrollInterval = setInterval(startScrolling, scrollSpeed);
+
+            scrollContainer.addEventListener("mouseenter", () => clearInterval(scrollInterval));
+            scrollContainer.addEventListener("mouseleave", () => {
+                scrollInterval = setInterval(startScrolling, scrollSpeed);
+            });
+
+            // Carruseles automáticos
             const carousels = document.querySelectorAll(".carousel-container");
 
-            carousels.forEach((carousel, index) => {
-                let track = carousel.querySelector(".carousel-track");
-                let images = track.children;
+            carousels.forEach((carousel) => {
+                const track = carousel.querySelector(".carousel-track");
+                const images = track.querySelectorAll("img");
                 let indexImage = 0;
+                const totalImages = images.length;
 
                 function moveToNextImage() {
-                    if (indexImage >= images.length - 1) {
-                        indexImage = 0;
-                    } else {
-                        indexImage++;
-                    }
+                    indexImage = (indexImage + 1) % totalImages;
                     updateCarousel();
                 }
 
                 function moveToPrevImage() {
-                    if (indexImage <= 0) {
-                        indexImage = images.length - 1;
-                    } else {
-                        indexImage--;
-                    }
+                    indexImage = (indexImage - 1 + totalImages) % totalImages;
                     updateCarousel();
                 }
 
                 function updateCarousel() {
-                    let offset = -indexImage * 100;
+                    const offset = -indexImage * 100;
+                    track.style.transition = "transform 0.5s ease-in-out";
                     track.style.transform = `translateX(${offset}%)`;
                 }
 
-                carousel.parentElement.querySelector(".nextBtn").addEventListener("click", moveToNextImage);
-                carousel.parentElement.querySelector(".prevBtn").addEventListener("click", moveToPrevImage);
+                const nextBtn = carousel.querySelector(".nextBtn");
+                const prevBtn = carousel.querySelector(".prevBtn");
 
-                // Carrusel automático
-                setInterval(moveToNextImage, 3000);
+                nextBtn.addEventListener("click", moveToNextImage);
+                prevBtn.addEventListener("click", moveToPrevImage);
+
+                let autoScroll = setInterval(moveToNextImage, 3000);
+
+                carousel.addEventListener("mouseenter", () => clearInterval(autoScroll));
+                carousel.addEventListener("mouseleave", () => {
+                    autoScroll = setInterval(moveToNextImage, 3000);
+                });
             });
         });
+
 
 
     </script>
