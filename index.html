@@ -117,7 +117,7 @@
         }
 
         .logo-container img {
-            width: 100px;
+            width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -134,9 +134,21 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            top: -150px;
         }
 
         .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-background2 {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-background2 video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -327,7 +339,7 @@
         .exitos-container {
             display: flex;
             justify-content: center; /* Centra las imágenes horizontalmente */
-            align-items: center; /* Centra las imágenes verticalmente */
+            align-items: flex-start; /* Centra las imágenes verticalmente */
             gap: 10px; /* Espaciado entre las imágenes */
             flex-wrap: wrap; /* Permite que las imágenes se acomoden en varias líneas si es necesario */
         }
@@ -340,8 +352,8 @@
 
         .exitos img {
             width: 100%; /* Las imágenes se ajustan al ancho de su contenedor */
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block; /* Elimina el espacio debajo de las imágenes */
+            height: 200px; /* Mantiene la proporción de la imagen */
+            object-fit: cover;
         }
 
 
@@ -561,7 +573,7 @@
         </div>
     </section>
     
-    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+    <div class="video-background2" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
         <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
             <source src="banner_en_video.mp4" type="video/mp4">
             Tu navegador no soporta videos.
@@ -619,19 +631,19 @@
         <h2 class="menus-title">Casos de exito</h2>
         <div class="exitos-container">
             <div class="exitos">
-                <img src="casoexito5.png" alt="Imagen 10">
+                <img src="casoexito5.png" alt="Imagen 10" height="200">
                 <h2>Smartgrid</h2>
             </div>
             <div class="exitos">
-                <img src="casoexito8.png" alt="Imagen 10">
+                <img src="casoexito8.png" alt="Imagen 10" height="200">
                 <h2>Robots</h2>
             </div>
             <div class="exitos">
-                <img src="casoexito6.png" alt="Imagen 10">
+                <img src="casoexito6.png" alt="Imagen 10" height="200">
                 <h2>Robot de combate</h2>
             </div>
             <div class="exitos">
-                <img src="casoexito7.png" alt="Imagen 10">
+                <img src="casoexito7.png" alt="Imagen 10" height="200">
                 <h2>Quieres saber más?</h2>
                 <h3><a href="https://wa.me/56942229903" class="footer-link">
                     Contáctanos aquí
@@ -661,7 +673,7 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <p>&copy; 2025 Nombre de la Empresa. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Metalfix. Todos los derechos reservados.</p>
         </div>
     </footer>
     
