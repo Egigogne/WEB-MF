@@ -136,6 +136,7 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         .contact-container h2 {
@@ -146,7 +147,7 @@
 
         .contact-container input, 
         .contact-container textarea {
-            width: 100%;
+            width: 80%;
             padding: 15px;
             margin-bottom: 20px;
             border: none;
@@ -154,6 +155,10 @@
             font-size: 1rem;
             background: #374955;
             color: white;
+            font-family: "Roboto Mono", serif;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-container button {
@@ -189,10 +194,95 @@
         }
 
         footer {
-            margin-top: 40px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            padding: 40px 20px;
+            font-family: 'Roboto Mono', serif;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffaf40;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-address {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #d3d3d3;
+            margin-bottom: 20px;
+        }
+
+        .footer-address a {
+            color: #ffaf40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link {
+            text-decoration: none;
+            color: #d3d3d3;
+        }
+        .footer-address a:hover {
+            color: #ffe29d;
+        }
+
+        .footer-copyright {
             font-size: 0.9rem;
             color: #a9a9a9;
+            margin-top: 20px;
         }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .text-overlay {
+                font-size: 1.5rem;  /* Reducir el tamaño del texto en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-overlay {
+                font-size: 1.2rem;  /* Aún más pequeño en pantallas muy pequeñas */
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -204,31 +294,91 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul id="navbarMenu">
-            <li><a href="index.html#consultorias">Consultorías</a></li>
-            <li><a href="index.html#ingenieria">Ingeniería</a></li>
-            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
+            <li><a href="consultoria.html">Consultorías</a></li>
+            <li><a href="ingenieria.html">Ingeniería</a></li>
+            <li><a href="productos.html">Productos y Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
     <div class="contact-container">
         <h2>Contáctanos</h2>
-        <form action="mailto:metalfix@metalfix.cl" method="POST" enctype="text/plain">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <input type="text" name="asunto" placeholder="Asunto" required>
-            <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
-            <button type="submit">Enviar Mensaje</button>
-        </form>
-
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
+        <p>
+            Luis Beltrán 1588<br>
+            Providencia, Region Metropolitana, Chile<br>
+            Teléfono: +56 9 4222 9903<br>
+            Email: <a href="mailto:metalfix@metalfix.cl">metalfix@metalfix.cl</a>
+        </p>
+        <p></p>
+        <a href="https://docs.google.com/forms/d/1Mt72_sJCUC-4QaPcIEZMmIpFqXyC-suKEu9oj6V1YxI/viewform" target="_blank">
+            <button>¿Tienes dudas? Rellena este formulario de consultas</button>
+        </a>
+        <p> </p>
+        <a href="https://wa.me/56942229903" target="_blank">
+            <button>O alternativamente, contacatanos vía WhatsApp</button>
+        </a>
     </div>
-
-    <footer>
-        &copy; 2025 Traspasamos experiencia. Todos los derechos reservados.
+    </div>
+        <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div> 
+    <footer style="background-color: #1e1e1e; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Oficina Central</h3>
+                <p>Luis Beltrán 1588 <br>Providencia, Santiago, Chile</p>
+                <p>Email: <a href="mailto:metalfix@metalfix.cl" style="color: #ffaf40;">metalfix@metalfix.cl</a></p>
+                <p>Teléfono: +56 9 4222 9903</p>
+                <p>Teléfono: +56 2 2274 1333</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Nuestras politicas</h3>
+                <a href="Términos_y_condiciones.html" class="footer-link">
+                    <p>Términos y condiciones</p>
+                </a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2025 Nombre de la Empresa. Todos los derechos reservados.</p>
+        </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+    
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("collapsed");
+            });
+        });
+        function toggleZoom(img) {
+            img.classList.toggle('zoomed');
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
 
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("expanded");
+            });
+        });
+
+        function validarFormulario(event) {
+            var nombre = document.getElementsByName("nombre")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var asunto = document.getElementsByName("asunto")[0].value;
+            var mensaje = document.getElementsByName("mensaje")[0].value;
+    
+            if (nombre === "" || email === "" || asunto === "" || mensaje === "") {
+                alert("Por favor, completa todos los campos.");
+                event.preventDefault();
+                return false;
+            }
+    
+            var mailtoLink = `mailto:metalfix@metalfix.cl?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent('Nombre: ' + nombre + '\nCorreo: ' + email + '\nMensaje: ' + mensaje)}`;
+            window.location.href = mailtoLink;
+            return false; // Evita el envío predeterminado del formulario
+        }
+    </script>
 </body>
 </html>
