@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Innovación y Excelencia</title>
+    <title>Innovación y Excelencia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
             margin: 0;
             font-family: "Roboto Mono", serif;
             color: white;
-            background: #0f172a;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);;
         }
 
         /* Barra de Navegación */
@@ -107,6 +107,8 @@
                 display: flex;
             }
         }
+
+
         /* Logo Superior Izquierdo */
         .logo-container {
             position: absolute;
@@ -117,7 +119,7 @@
         }
 
         .logo-container img {
-            width: 100px;
+            width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -128,12 +130,45 @@
             transform: scale(1.1);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
         }
-        .blog-section {
-            padding: 100px 20px;
+
+        /* banner de Fondo */
+        .image-background {
+            position: relative;
+            height: 50vh; /* Adjust this value as needed */ 
+            width: 100%; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .image-background img {
+            width: 80%; /* Ajusta el ancho según sea necesario */
+            height: auto;
+            object-fit: cover;
+        }
+        /* Video de Fondo */
+        .video-background {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* Sección ingenieria */
+        .productos-section {
+            padding: 80px 20px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
             text-align: center;
         }
 
-        .blog-title {
+        .productos-title {
             font-size: 3rem;
             font-weight: bold;
             color: #ffffff;
@@ -141,31 +176,126 @@
             margin-bottom: 20px;
         }
 
-        .blog-post {
+        .productos-description {
+            font-size: 1.2rem;
+            color: #d3d3d3;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .productos-card {
             background: #374955;
             border-radius: 15px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 700px;
+            max-width: 300px;
             color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .blog-post:hover {
+        .productos-card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
-
-        .blog-post h2 {
-            color: #ffaf40;
-            margin-bottom: 10px;
+               /* Imagenes y texto */
+        .imagenes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; /* Mayor espacio entre los elementos */
+            padding: 40px 20px;
         }
 
-        .blog-post p {
-            font-size: 1rem;
-            color: #d3d3d3;
+        .imagen-texto {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* Mayor espacio entre la imagen y el texto */
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
+        .imagen-fija {
+            max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+            height: auto; /* Mantiene la proporción */
+            width: 400px; /* Tamaño de imagen mejorado */
+            border-radius: 15px; /* Bordes redondeados mejorados */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombras para un efecto visual más atractivo */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .imagen-fija:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        /* zoom de imagenes*/
+        .zoomable.zoomed {
+            transform: scale(1.5);
+            transition: transform 0.5s ease-in-out;
+            cursor: zoom-out;
+        }
+
+        /* Ajustes para pantallas medianas (tablets) */
+        @media (max-width: 1024px) {
+            .imagen-fija {
+                width: 70vw; /* Ocupa más espacio en pantallas más pequeñas */
+            }
+        }
+
+        /* Ajustes para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            .imagen-fija {
+                width: 90vw; /* Casi todo el ancho en móviles */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-background {
+                height: 25vh;
+            }
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            opacity: 0; /* Comienza invisible */
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+        .text-overlay img {
+            width: 400px; /* Set a fixed width */
+            height: auto; /* Set a fixed height */
+        }
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Footer */
         footer {
             background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
             color: #ffffff;
@@ -207,6 +337,11 @@
 
         .footer-address a:hover {
             color: #ffe29d;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #d3d3d3;
         }
 
         .footer-copyright {
@@ -251,10 +386,10 @@
         }
 
 
-
     </style>
 </head>
 <body>
+    <!-- Barra de Navegación -->
     <nav class="navbar">
         <a href="index.html" class="logo-container">
             <img src="Logo Metalfix Transparente.png" alt="logo metalfix" class="banner-image">
@@ -263,47 +398,105 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul id="navbarMenu">
-            <li><a href="index.html#consultorias">Consultorías</a></li>
-            <li><a href="index.html#ingenieria">Ingeniería</a></li>
-            <li><a href="index.html#productosyservicios">Productos y Servicios</a></li>
+            <li><a href="consultoria.html">Consultorías</a></li>
+            <li><a href="ingenieria.html">Ingeniería</a></li>
+            <li><a href="productos.html">Productos y Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-
-    <section class="blog-section">
-        <h1 class="blog-title">Nuestro Blog</h1>
-        <div class="blog-post">
-            <h2>Innovación en la Industria</h2>
-            <p>Descubre las últimas tendencias en tecnología para la industria moderna.</p>
+    <div class="image-background"> 
+        <img src="blog1.jpg" alt="Background Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    </div>
+    <!-- ing con imagenes -->
+    <section id="productos" class="productos-section">
+        <h2 class="productos-title">Industria 4.0: Innovación y Alianzas Estratégicas</h2>
+        <div class="imagenes-container">
+            <p>La Industria 4.0 está revolucionando la manufactura con tecnologías como la automatización, IoT e inteligencia articial. Estas herramientas están transformando los procesos industriales, haciéndolos más recientes, personalizados y sostenibles. Metalx reconoce la importancia de esta revolución y se enfoca en colaborar con aliados estratégicos para mantenerse alineado con las tendencias del futuro.</p>
         </div>
-        <div class="blog-post">
-            <h2>Estrategias de Consultoría</h2>
-            <p>Consejos para optimizar procesos empresariales y mejorar la eficiencia.</p>
+        <div class="imagenes-container" style="display: block; margin-bottom: 20px;">
+            <h2 style="margin-bottom: 10px;">Beneficios de la Industria 4.0</h2>
+            <p>✅Optimización de procesos y reducción de costos.</p>
+            <p>✅Producción personalizada a gran escala.</p>
+            <p>✅Mejora continua en calidad y sostenibilidad.</p>
         </div>
-        <div class="blog-post">
-            <h2>Productos y Servicios</h2>
-            <p>Explora nuestra gama de productos innovadores que están revolucionando el mercado.</p>
+        <div class="imagenes-container"> 
+            <h2>Metalfix y la Industria 4.0</h2>
+            <p>Nuestra estrategia se centra en establecer alianzas con proveedores tecnológicos, instituciones educativas y clientes avanzados que ya trabajan en entornos de manufactura inteligente. Metalfix está comprometido con la transformación de la industria mediante la colaboración estratégica y el aprendizaje continuo. Nuestra visión es ser un socio confiable en un mercado cada vez más digitalizado.</p>
         </div>
     </section>
+    <!-- video-->
+    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="BANNER PRODUCTOS.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="text-overlay" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
+            <p class="productos-description">¿Tienes dudas sobre lo que ofrecemos?</p>
+            <p class="productos-description"> </p>
+            <a href="https://wa.me/56942229903?text=Hola,%20quiero%20m%C3%A1s%informaci%C3%B3n" target="_blank">
+              <img src="contactanos.png" alt="Botón de WhatsApp">
+            </a>
+        </div>
+    </div>
     <div>
         <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
             <i class="fab fa-whatsapp"></i>
         </a>
-    </div>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <p class="footer-title">Nuestra Dirección</p>
-                <p class="footer-address">
-                    Luis Beltrán 1588<br>
-                    Providencia, Region Metropolitana, Chile<br>
-                    Teléfono: +56 9 4222 9903<br>
-                    Email: <a href="mailto:metalfix@metalfix.cl">metalfix@metalfix.cl</a>
-                </p>
+    </div> 
+    <!-- Footer -->
+    <footer style="background-color: #1e1e1e; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Oficina Central</h3>
+                <p>Luis Beltrán 1588 <br>Providencia, Santiago, Chile</p>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Traspasamos experiencia. Todos los derechos reservados.</p>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Contacto</h3>
+                <p>Email: <a href="mailto:fix@fix.cl" style="color: #ffaf40;">fix@fix.cl</a></p>
+                <p>Email: <a href="mailto:metalfix@metalfix.cl" style="color: #ffaf40;">metalfix@metalfix.cl</a></p>
+                <p>Teléfono: +56 9 4222 9903</p>
+                <p>Teléfono: +56 2 2274 1333</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Nuestras politicas</h3>
+                <a href="Términos_y_condiciones.html" class="footer-link">
+                    <p>Términos y condiciones</p>
+                </a>
+                <a href="blog1.html" class="footer-link">
+                    <p>Industria 4.0</p>
+                </a>
+                <a href="blog2.html" class="footer-link">
+                    <p>Educación Técnica y Dual</p>
+                </a>
+                <a href="blog3.html" class="footer-link">
+                    <p>Sostenibilidad y Sustentabilidad en la Industria</p>
             </div>
         </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2025 Metalfix. Todos los derechos reservados.</p>
+        </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+    
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("collapsed");
+            });
+        });
+        function toggleZoom(img) {
+            img.classList.toggle('zoomed');
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("expanded");
+            });
+        });
+
+    </script>
 </body>
 </html>

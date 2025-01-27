@@ -11,7 +11,14 @@
             margin: 0;
             font-family: "Roboto Mono", serif;
             color: white;
-            background: #0f172a;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);;
+        }
+
+        /* Barra de Navegación */
+        .banner-image {
+            max-width: 150px; /* Ajusta el tamaño del logo */
+            height: auto;
+            cursor: pointer; /* Indica que es clickeable */
         }
 
         /* Barra de Navegación */
@@ -52,6 +59,53 @@
             color: #ffaf40;
         }
 
+        /* Icono de menú para dispositivos móviles */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 50px;
+        }
+
+        /* Menú oculto en dispositivos pequeños */
+        .navbar ul.collapsed {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 20px 0;
+            z-index: 999;
+        }
+
+        .navbar ul.collapsed li {
+            margin: 10px 0;
+        }
+
+        .navbar ul.expanded {
+            display: flex;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+            }
+
+            .navbar ul.collapsed {
+                display: flex;
+            }
+        }
+
         .logo-container {
             position: absolute;
             top: 10px;
@@ -60,7 +114,7 @@
         }
 
         .logo-container img {
-            width: 100px;
+            width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -132,6 +186,11 @@
             transition: color 0.3s ease;
         }
 
+        .footer-link {
+            text-decoration: none;
+            color: #d3d3d3;
+        }
+
         .footer-address a:hover {
             color: #ffe29d;
         }
@@ -141,14 +200,29 @@
             color: #a9a9a9;
             margin-top: 20px;
         }
+         /* Responsividad */
+         @media (max-width: 768px) {
+            .text-overlay {
+                font-size: 1.5rem;  /* Reducir el tamaño del texto en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-overlay {
+                font-size: 1.2rem;  /* Aún más pequeño en pantallas muy pequeñas */
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo-container">
-            <img src="Logo Metalfix Transparente.png" alt="logo metalfix">
+            <img src="Logo Metalfix Transparente.png" alt="logo metalfix" class="banner-image">
         </a>
-        <ul>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbarMenu">
             <li><a href="consultoria.html">Consultorías</a></li>
             <li><a href="ingenieria.html">Ingeniería</a></li>
             <li><a href="productos.html">Productos y Servicios</a></li>
@@ -197,12 +271,15 @@
         <p><strong>7. Cambios en la política:</strong> Nos reservamos el derecho de modificar esta política en cualquier momento. Las actualizaciones estarán disponibles en esta página, y te recomendamos revisar periódicamente.</p>
         <p>Al usar nuestro sitio web o servicios, aceptas esta Política de Privacidad. Tu confianza es nuestra prioridad, y trabajamos constantemente para garantizar la seguridad de tu información.</p>
     </div>
-
     <footer style="background-color: #1e1e1e; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: #ffaf40;">Oficina Central</h3>
                 <p>Luis Beltrán 1588 <br>Providencia, Santiago, Chile</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Contacto</h3>
+                <p>Email: <a href="mailto:fix@fix.cl" style="color: #ffaf40;">fix@fix.cl</a></p>
                 <p>Email: <a href="mailto:metalfix@metalfix.cl" style="color: #ffaf40;">metalfix@metalfix.cl</a></p>
                 <p>Teléfono: +56 9 4222 9903</p>
                 <p>Teléfono: +56 2 2274 1333</p>
@@ -212,11 +289,41 @@
                 <a href="Términos_y_condiciones.html" class="footer-link">
                     <p>Términos y condiciones</p>
                 </a>
+                <a href="blog1.html" class="footer-link">
+                    <p>Industria 4.0</p>
+                </a>
+                <a href="blog2.html" class="footer-link">
+                    <p>Educación Técnica y Dual</p>
+                </a>
+                <a href="blog3.html" class="footer-link">
+                    <p>Sostenibilidad y Sustentabilidad en la Industria</p>
             </div>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <p>&copy; 2025 Nombre de la Empresa. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Metalfix. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+    
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("collapsed");
+            });
+        });
+        function toggleZoom(img) {
+            img.classList.toggle('zoomed');
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("expanded");
+            });
+        });
+
+    </script>
 </body>
 </html>

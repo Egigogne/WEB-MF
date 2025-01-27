@@ -119,7 +119,7 @@
         }
 
         .logo-container img {
-            width: 100px;
+            width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -146,13 +146,13 @@
 
 
         /* Sección ingenieria */
-        .consultorias-section {
+        .ingenieria-section {
             padding: 80px 20px;
             background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
             text-align: center;
         }
 
-        .consultorias-title {
+        .ingenieria-title {
             font-size: 3rem;
             font-weight: bold;
             color: #ffffff;
@@ -160,14 +160,14 @@
             margin-bottom: 20px;
         }
 
-        .consultorias-description {
+        .ingenieria-description {
             font-size: 1.2rem;
             color: #d3d3d3;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .consultorias-card {
+        .ingenieria-card {
             background: #374955;
             border-radius: 15px;
             padding: 20px;
@@ -178,7 +178,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .consultorias-card:hover {
+        .ingenieria-card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
@@ -206,7 +206,6 @@
             width: 360px; /* Ocupa la mitad del ancho de la pantalla */
             border-radius: 10px; /* Opcional: bordes redondeados */
             transition: transform 0.3s ease-in-out; /* Animación al pasar el cursor */
-            object-fit: cover;
         }
         a {
             display: block;
@@ -406,22 +405,18 @@
         }
         /* Responsividad */
         @media (max-width: 768px) {
-            .imagen-container {
-                flex: 0 0 50%; /* Ocupa un 50% del ancho en pantallas medianas */
-            }
             .text-overlay {
                 font-size: 1.5rem;  /* Reducir el tamaño del texto en pantallas más pequeñas */
             }
         }
 
         @media (max-width: 480px) {
-            .imagen-container {
-                flex: 0 0 100%; /* Ocupa todo el ancho en pantallas pequeñas */
-            }
             .text-overlay {
                 font-size: 1.2rem;  /* Aún más pequeño en pantallas muy pequeñas */
             }
         }
+
+
     </style>
 </head>
 <body>
@@ -441,20 +436,22 @@
         </ul>
     </nav>
     <!-- ing con imagenes -->
-    <section id="consultorias11" class="consultorias-section">
-        <h2 class="consultorias-title">Consultorías</h2>
-        <p class="consultorias-description">En Metalfix, somos expertos en el análisis, diseño y optimización de planos y piezas técnicas para una amplia variedad de industrias.</p>
-        <p class="consultorias-description">Nuestra experiencia garantiza soluciones precisas, eficientes y adaptadas a tus necesidades, repaldadas por un efoque técnico profundo tecnología de vanguardia</p>
+    <section id="ingenieria" class="ingenieria-section">
+        <h2 class="ingenieria-title">Consultorías</h2>
+        <p class="ingenieria-description">En Metalfix, somos expertos en el análisis, diseño y optimización de planos y piezas técnicas para una amplia variedad de industrias.</p>
+        <p class="ingenieria-description">Nuestra experiencia garantiza soluciones precisas, eficientes y adaptadas a tus necesidades, repaldadas por un efoque técnico profundo tecnología de vanguardia</p>
         <img src="consultorias2.png" alt="Imagen fija" class="imagen-fija">
         <img src="consultorias3.png" alt="Imagen fija" class="imagen-fija">
         <img src="consultorias4.png" alt="Imagen fija" class="imagen-fija">
         <img src="consultorias5.png" alt="Imagen fija" class="imagen-fija">
     </section>
-    <section id="consultorias33" class="consultorias-section"> 
-        <h2 class="consultorias-title">Proceso de Consultoría</h2>
+    <!-- video--> 
+    <section id="ingenieria" class="ingenieria-section">
+        <h2 class="ingenieria-title">Proceso de consultoría</h2>
+        <p class="ingenieria-description">Traspasamos experiencia.</p>
         <div class="imagenes-container" style="display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Imagen 1 con su texto debajo -->
-            <div class="imagen-container" style="text-align: center; flex: 1; margin: 10px;">
+            <!-- Imagen 1 con su texto debajo ( style="text-align: center; flex: 1; margin: 10px;")-->
+            <div class="imagen-container">
                 <img src="numero1.png" alt="Imagen fija" class="imagen-fija">
                 <a href="javascript:void(0);" id="toggleTexto">Reunión incial y análisis de necesidades</a>
                 <div id="consultorias" class="texto-plegable" style="display: none;">
@@ -463,38 +460,40 @@
             </div>
     
             <!-- Imagen 2 con su texto debajo -->
-            <div class="imagen-container" style="text-align: center; flex: 1; margin: 10px;">
+            <div class="imagen-container">
                 <img src="numero2.png" alt="Imagen fija" class="imagen-fija">
-                <a href="javascript:void(0);" id="toggleTexto2">Diseño de la solución</a>
+                <a href="javascript:void(0);" id="toggleTexto2">Diagnóstico técnico</a>
                 <div id="consultorias2" class="texto-plegable" style="display: none;">
-                    <p>Creamos un plan técnico personalizado que combine innovación, eficiencia y sostenibilidad.</p>
+                    <p>Evaluamos planos, piezas y procesos para detectar mejoras potenciales.</p>
                 </div>
             </div>
     
             <!-- Imagen 3 con su texto debajo -->
-            <div class="imagen-container" style="text-align: center; flex: 1; margin: 10px;">
+            <div class="imagen-container">
                 <img src="numero3.png" alt="Imagen fija" class="imagen-fija">
-                <a href="javascript:void(0);" id="toggleTexto3">Implementación y desarrollo</a>
+                <a href="javascript:void(0);" id="toggleTexto3">Propuesta de solución</a>
                 <div id="consultorias3" class="texto-plegable" style="display: none;">
-                    <p>Ponemos en marcha la solución con un enfoque práctico y colaborativo.</p>
+                    <p>Presentamos un plan técnico detallado, incluyendo optimizaciones, rediseños y recomendaciones prácticas.</p>
                 </div>
             </div>
     
             <!-- Imagen 4 con su texto debajo -->
-            <div class="imagen-container" style="text-align: center; flex: 1; margin: 10px;">
+            <div class="imagen-container">
                 <img src="numero4.png" alt="Imagen fija" class="imagen-fija">
-                <a href="javascript:void(0);" id="toggleTexto4">Seguimiento y mejora continua</a>
+                <a href="javascript:void(0);" id="toggleTexto4">Implementación y Seguimiento</a>
                 <div id="consultorias4" class="texto-plegable" style="display: none;">
-                    <p>Proveemos soporte y mejoras constante para garantizar resultados a largo plazo.</p>
+                    <p>Trabajamos contigo para ejecutar las soluciones y grarantizamos resultados efectivos.</p>
                 </div>
             </div>
         </div>
     </section>
-    <div class="video-background" style="position: relative; height: 100vh; width: 100%; overflow: hidden;">
-        <img src="banner para consultorias.png" alt="Fondo de Metalfix" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-        <div class="text-overlay" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
+    
+    
+    <div class="video-background" style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
+        <img src="banner para consultorias.png" alt="Fondo de Metalfix" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
+        <div class="text-overlay" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1; text-align: center; width: 90%;">
             <a href="https://wa.me/56942229903?text=Hola,%20quiero%20m%C3%A1s%informaci%C3%B3n" target="_blank">
-                <img src="como podemos ayudarte.png" alt="Botón de WhatsApp" style="width: 600px; height: auto;">
+                <img src="como podemos ayudarte.png" alt="Botón de WhatsApp" style="width: 100%; max-width: 400px; height: auto;">
             </a>
         </div>
     </div>
@@ -504,22 +503,36 @@
         </a>
     </div> 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <p class="footer-title">Nuestra Dirección</p>
-                <p class="footer-address">
-                    Luis Beltrán 1588<br>
-                    Providencia, Region Metropolitana, Chile<br>
-                    Teléfono: <br>
-                    +56 9 4222 9903<br>
-                    +56 2 2274 1333<br>
-                    Email: <a href="mailto:metalfix@metalfix.cl">metalfix@metalfix.cl</a>
-                </p>
+    <footer style="background-color: #1e1e1e; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Oficina Central</h3>
+                <p>Luis Beltrán 1588 <br>Providencia, Santiago, Chile</p>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Traspasamos experiencia. Todos los derechos reservados.</p>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Contacto</h3>
+                <p>Email: <a href="mailto:fix@fix.cl" style="color: #ffaf40;">fix@fix.cl</a></p>
+                <p>Email: <a href="mailto:metalfix@metalfix.cl" style="color: #ffaf40;">metalfix@metalfix.cl</a></p>
+                <p>Teléfono: +56 9 4222 9903</p>
+                <p>Teléfono: +56 2 2274 1333</p>
             </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffaf40;">Nuestras politicas</h3>
+                <a href="Términos_y_condiciones.html" class="footer-link">
+                    <p>Términos y condiciones</p>
+                </a>
+                <a href="blog1.html" class="footer-link">
+                    <p>Industria 4.0</p>
+                </a>
+                <a href="blog2.html" class="footer-link">
+                    <p>Educación Técnica y Dual</p>
+                </a>
+                <a href="blog3.html" class="footer-link">
+                    <p>Sostenibilidad y Sustentabilidad en la Industria</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2025 Metalfix. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script>
@@ -530,7 +543,7 @@
                     // Obtiene el número del enlace actual (ej. "toggleTexto1" -> "1")
                     let idNum = enlace.id.replace('toggleTexto', '');
                     let contenido = document.getElementById('consultorias' + idNum);
-
+    
                     // Alternar visibilidad del contenido correspondiente
                     if (contenido.style.display === 'none') {
                         contenido.style.display = 'block';
@@ -540,23 +553,15 @@
                 });
             });
         });
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.getElementById('menuToggle');
-            const navbarMenu = document.getElementById('navbarMenu');
-
-            menuToggle.addEventListener('click', function() {
-                if (navbarMenu.classList.contains('collapsed')) {
-                    navbarMenu.classList.remove('collapsed');
-                    navbarMenu.classList.add('expanded');
-                } else {
-                    navbarMenu.classList.remove('expanded');
-                    navbarMenu.classList.add('collapsed');
-                }
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbarMenu = document.getElementById("navbarMenu");
+    
+            menuToggle.addEventListener("click", function () {
+                navbarMenu.classList.toggle("collapsed");
             });
         });
-        
-</script>
-
     </script>
+    
 </body>
 </html>

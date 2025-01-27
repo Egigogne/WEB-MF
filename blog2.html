@@ -229,25 +229,11 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
         /* zoom de imagenes*/
-        .zoomable {
-            transition: transform 0.3s ease; /* Animación suave para el zoom */
-            cursor: pointer;
-            max-width: 100%; /* Para asegurarse de que las imágenes no excedan el ancho del contenedor */
-            z-index: 1; /* Inicialmente las imágenes tienen un z-index bajo */
-        }
-
-        .zoomable:hover {
-            opacity: 0.8; /* Para dar un efecto visual cuando el ratón pasa por encima */
-        }
-
         .zoomable.zoomed {
-            transform: scale(2); /* Imagen ampliada */
-            z-index: 10; /* La imagen ampliada se pone encima de las demás */
+            transform: scale(1.5);
             transition: transform 0.5s ease-in-out;
             cursor: zoom-out;
         }
-
-
 
         /* Ajustes para pantallas medianas (tablets) */
         @media (max-width: 1024px) {
@@ -419,19 +405,15 @@
         </ul>
     </nav>
     <div class="image-background"> 
-        <img src="banner productos.png" alt="Background Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <img src="blog1.jpg" alt="Background Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
     </div>
     <!-- ing con imagenes -->
     <section id="productos" class="productos-section">
-        <h2 class="productos-title">Productos y Servicios</h2>
-        <p class="productos-description"></p>
+        <h2 class="productos-title">Educación Técnica y Dual: El Futuro de la Industria</h2>
         <div class="imagenes-container">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/1-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/2-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/3-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/4-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/5-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
-            <img src="https://metalfix-iot.cl/wp-content/uploads/2022/06/6-1024x664.jpg" alt="Imagen fija" class="imagen-fija zoomable" onclick="toggleZoom(this)">
+            <p> La educación técnica y dual se ha convertido en un elemento clave para la transformación industrial, al combinar teoría y práctica para formar profesionales preparados para los desafíos actuales. Este modelo, que integra aprendizaje en aulas y talleres, asegura que los egresados posean habilidades directamente aplicables al entorno laboral.</p>
+            <p> En Metalfix, la educación técnica no solo es una fuente de talento, sino un pilar para la calidad e innovación. La empresa ha incorporado jóvenes técnicos que, gracias a su formación, contribuyen a la optimización de procesos, la adopción de nuevas tecnologías y el cumplimiento de estándares de la industria. Esto ha permitido a Metalx ser más eciente y adaptarse rápidamente a las demandas del mercado.</p>
+            <p> Mirando al futuro, la educación técnica continuará evolucionando con la integración de tecnologías avanzadas como IoT, robótica y sostenibilidad. Metalx rearma su compromiso con este modelo, fortaleciendo alianzas estratégicas para seguir siendo un referente en manufactura técnica y soluciones innovadoras.</p>
         </div>
     </section>
     <!-- video-->
@@ -440,13 +422,14 @@
             <source src="BANNER PRODUCTOS.mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
-        <div class="text-overlay" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1;">
-            <p class="productos-description">¿Tienes dudas sobre lo que ofrecemos?</p>
-            <p class="productos-description"> </p>
+        <div class="text-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; z-index: 1; text-align: center;">
+            <p class="productos-description">¿Quieres saber más?</p>
+            <p class="productos-description"></p>
             <a href="https://wa.me/56942229903?text=Hola,%20quiero%20m%C3%A1s%informaci%C3%B3n" target="_blank">
-              <img src="boton.png" alt="Botón de WhatsApp">
+                <img src="contactanos.png" alt="Botón de WhatsApp">
             </a>
         </div>
+        
     </div>
     <div>
         <a href="https://wa.me/56942229903" target="_blank" class="whatsapp-float">
@@ -495,26 +478,9 @@
                 navbarMenu.classList.toggle("collapsed");
             });
         });
-        let imagenes = document.querySelectorAll('.zoomable');
-        let imagenAmpliada = null;
-
-        function toggleZoom(imagen) {
-            if (imagenAmpliada && imagenAmpliada !== imagen) {
-                // Si hay una imagen ya ampliada, la vuelve a su tamaño original
-                imagenAmpliada.classList.remove('zoomed');
-            }
-
-            // Si la imagen clickeada no tiene la clase 'zoomed', ampliarla
-            if (!imagen.classList.contains('zoomed')) {
-                imagen.classList.add('zoomed');
-                imagenAmpliada = imagen;
-            } else {
-                // Si la imagen ya está ampliada, volver a su tamaño original
-                imagen.classList.remove('zoomed');
-                imagenAmpliada = null;
-            }
+        function toggleZoom(img) {
+            img.classList.toggle('zoomed');
         }
-
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menuToggle");
             const navbarMenu = document.getElementById("navbarMenu");
@@ -525,6 +491,5 @@
         });
 
     </script>
-    
 </body>
 </html>
