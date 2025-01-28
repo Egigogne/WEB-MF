@@ -199,6 +199,11 @@
         .image-container:hover {
             transform: scale(1.1);
         }
+        #imageScrollContainer img {
+            height: 100%;
+            width: 100%; /* Todas las imágenes tendrán el mismo alto que su contenedor */
+            object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionarse */
+        }
 
         /* Sección Consultorías */
         .menus-container {
@@ -513,7 +518,7 @@
                 <img src="imagen1.png" alt="Imagen 1">
             </div>
             <div class="image-container">
-                <img src="imagen2.png" alt="Imagen 2">
+                <img src="imagen2.jpg" alt="Imagen 2">
             </div>
             <div class="image-container">
                 <img src="imagen3.png" alt="Imagen 3">
@@ -531,7 +536,13 @@
                 <img src="imagen7.png" alt="Imagen 7">
             </div>
             <div class="image-container">
-                <img src="imagen8.png" alt="Imagen 8">
+                <img src="imagen8.jpg" alt="Imagen 8">
+            </div>
+            <div class="image-container">
+                <img src="imagen9.jpg" alt="Imagen 8">
+            </div>
+            <div class="image-container">
+                <img src="imagen10.jpg" alt="Imagen 8">
             </div>
         </div>
     </div>
@@ -682,6 +693,7 @@
                 </a>
                 <a href="blog3.html" class="footer-link">
                     <p>Sostenibilidad y Sustentabilidad en la Industria</p>
+                </a>
             </div>
         </div>
         <div style="text-align: center; margin-top: 20px;">
@@ -707,24 +719,29 @@
 
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Desplazamiento automático de imágenes
+            // Desplazamiento automático de imágenes en bucle continuo
             const scrollContainer = document.getElementById("imageScrollContainer");
             const scrollSpeed = 50;
             const step = 1;
 
+            // Duplicar el contenido del contenedor para un bucle infinito
+            scrollContainer.innerHTML += scrollContainer.innerHTML;
+
             function startScrolling() {
                 scrollContainer.scrollLeft += step;
-                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-                    scrollContainer.scrollLeft = 0;
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                    scrollContainer.scrollLeft = 0; // Reinicia sin interrupciones
                 }
             }
 
             let scrollInterval = setInterval(startScrolling, scrollSpeed);
 
+            // Detener el desplazamiento al pasar el mouse por encima
             scrollContainer.addEventListener("mouseenter", () => clearInterval(scrollInterval));
             scrollContainer.addEventListener("mouseleave", () => {
                 scrollInterval = setInterval(startScrolling, scrollSpeed);
             });
+
 
             // Carruseles automáticos
             const carousels = document.querySelectorAll(".carousel-container");
